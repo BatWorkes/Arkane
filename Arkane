@@ -1,0 +1,29 @@
+@echo off
+setlocal enabledelayedexpansion
+
+:main_loop
+cls
+echo Enter a message to modify files (type "exit" to quit):
+set /p message="Message: "
+
+if "%message%"=="exit" goto :eof
+
+echo Modifying files with message: %message%
+
+:: Example modification (replace with your actual file modification logic)
+echo %message% > modified_file.txt
+
+:: Simulating modification of network files
+:: Replace with your actual network file modification logic
+:: Example: copy modified_file.txt \\network\share\folder\
+
+echo Files modified successfully.
+
+:: Pause for a moment before looping again
+timeout /t 3 /nobreak > nul
+
+goto main_loop
+
+:eof
+echo Exiting script.
+pause
